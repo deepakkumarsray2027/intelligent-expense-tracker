@@ -2,6 +2,7 @@ package com.expensetracker.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "expenses")
@@ -15,6 +16,8 @@ public class Expense {
     private Double amount;
     private String category;
     private String paymentMethod;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
     public Expense() {}
